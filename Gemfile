@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.0'
+gem "mongoid", "~> 2.4"
+gem "bson_ext", "~> 1.5"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 
 # Gems used only for assets and not required
@@ -36,3 +40,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+
+gem "devise"
