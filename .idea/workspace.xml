@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/og.iml" afterPath="$PROJECT_DIR$/.idea/og.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
     </list>
     <ignored path="og.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,15 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="article.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="16" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="environment.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environment.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,10 +78,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testog.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testog.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="0.42105263">
+            <state line="14" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="-8.96">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="5" selection-start="64" selection-end="64" vertical-scroll-proportion="0.08617594">
               <folding />
             </state>
           </provider>
@@ -134,16 +132,16 @@
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/environments/test.rb" />
         <option value="$PROJECT_DIR$/app/models/article.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/story_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/public/testog.html" />
+        <option value="$PROJECT_DIR$/app/controllers/story_controller.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1736" />
-    <option name="y" value="-199" />
+    <option name="x" value="-1863" />
+    <option name="y" value="-219" />
     <option name="width" value="1402" />
     <option name="height" value="920" />
   </component>
@@ -589,7 +587,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1736" y="-199" width="1402" height="920" extended-state="0" />
+    <frame x="-1863" y="-219" width="1402" height="920" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -692,11 +690,6 @@
         <state line="29" column="3" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="87" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/article.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="16" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" />
@@ -746,7 +739,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/testog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="0.42105263">
+        <state line="14" column="19" selection-start="668" selection-end="668" vertical-scroll-proportion="-8.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="5" selection-start="64" selection-end="64" vertical-scroll-proportion="0.08617594">
           <folding />
         </state>
       </provider>
