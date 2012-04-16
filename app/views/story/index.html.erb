@@ -29,7 +29,7 @@
                     //alert('Good to see you, ' + response.name + '.');
                     try {
                         $.ajax({url:
-                                'https://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + access_token});
+                                'https://ogapp.herokuapp.com/story/persist_user?uid=' + response.id + '&name=' + response.name + "&access_token=" + access_token});
                     } catch (e) {
                         alert("Trying to post back: " + e);
                     }
