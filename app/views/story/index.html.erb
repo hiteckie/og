@@ -26,8 +26,12 @@
                 //alert('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
                     //alert('Good to see you, ' + response.name + '.');
-                    $.ajax({url:
-                            'https://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + response.authResponse.accessToken});
+                    try {
+                        $.ajax({url:
+                                'http://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + response.authResponse.accessToken});
+                    } catch (e) {
+                        alert("Trying to post back: " + e);
+                    }
                 });
             } else {
                 alert('Something went wrong!');
