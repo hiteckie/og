@@ -21,7 +21,7 @@
 
         // Additional initialization code here
 
-        FB.login(function(response) {
+        FB.getLoginStatus(function(response) {
             if (response.authResponse) {
                 //alert('Welcome!  Fetching your information.... ');
                 var access_token = response.authResponse.accessToken;
