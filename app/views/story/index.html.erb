@@ -24,11 +24,12 @@
         FB.login(function(response) {
             if (response.authResponse) {
                 //alert('Welcome!  Fetching your information.... ');
+                var access_token = response.authResponse.accessToken;
                 FB.api('/me', function(response) {
                     //alert('Good to see you, ' + response.name + '.');
                     try {
                         $.ajax({url:
-                                'http://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + response.authResponse.accessToken});
+                                'https://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + access_token});
                     } catch (e) {
                         alert("Trying to post back: " + e);
                     }
