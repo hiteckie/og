@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>PUAP You!</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
 
@@ -22,12 +23,14 @@
 
         FB.login(function(response) {
             if (response.authResponse) {
-                alert('Welcome!  Fetching your information.... ');
+                //alert('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
-                    alert('Good to see you, ' + response.name + '.');
+                    //alert('Good to see you, ' + response.name + '.');
+                    alert(window.location.domain);
+                    $.ajax();
                 });
             } else {
-                alert('User cancelled login or did not fully authorize.');
+                alert('Something went wrong!');
             }
         });
     };
@@ -41,6 +44,8 @@
         ref.parentNode.insertBefore(js, ref);
     }(document));
 </script>
+
+
 
 
 </body>

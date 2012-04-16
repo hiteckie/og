@@ -26,4 +26,29 @@ class StoryController < ApplicationController
     render :text => "#{a_str}"
   end
 
+  def og_obj
+
+  end
+
+  def test_user
+    a = AppUser.new
+    a.uid = '123456'
+    a.access_token = 'r708whfshafjksd'
+    a.name = 'name1'
+    a.save
+    render :text => 'success!'
+  end
+
+  def get_users
+    users = AppUser.find(:all)
+    list = ""
+    i = 1
+    users.each { |u|
+      list += i.to_s + ") " + u.name + ", " + u.uid + ", " + u.access_token + "<br>"
+      i += 1
+    }
+    logger.info "Count: " + users.count.to_s
+    render :text => "#{list}"
+  end
+
 end
