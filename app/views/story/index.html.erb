@@ -26,7 +26,8 @@
                 //alert('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
                     //alert('Good to see you, ' + response.name + '.');
-                    $.ajax('https://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + response.authResponse.accessToken);
+                    $.ajax({url:
+                            'https://ogapp.heroku.com/story/persist_user?uid=' + response.uid + '&name=' + response.name + "&access_token=" + response.authResponse.accessToken});
                 });
             } else {
                 alert('Something went wrong!');
@@ -44,7 +45,7 @@
     }(document));
 </script>
 
-
+PUAP THIS
 
 
 </body>
