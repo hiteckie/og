@@ -31,9 +31,10 @@ class StoryController < ApplicationController
   end
 
   def persist_user
-    u = AppUser.find(:uid => params[:uid])
+    u = AppUser.where(:uid => params[:uid])
+    logger.info "Num existing users: " + u.count.to_s
     logger.info "User uid: #{params[:uid]}, #{params[:name]}, #{params[:access_token]}"
-    if u == nil
+    if u.count == 0
       nu = AppUser.new
       nu.uid = params[:uid]
       nu.name = params[:name]
@@ -41,16 +42,16 @@ class StoryController < ApplicationController
       nu.save
       logger.info "New user: " + nu.uid
     else
-      logger.info "Existing user: " + u.uid
+      logger.info "Existing user: " + u.first.to_s
     end
     render :text => 'success'
   end
 
   def test_user
     a = AppUser.new
-    a.uid = '123456'
-    a.access_token = 'r708whfshafjksd'
-    a.name = 'name1'
+    a.uid = rand(100000).to_s
+    a.access_token = 'r708whfshafjksd' + rand(99999).to_s
+    a.name = 'name_' + rand(9999).to_s
     a.save
     render :text => 'success!'
   end
