@@ -32,6 +32,7 @@ class StoryController < ApplicationController
 
   def persist_user
     u = AppUser.find(:uid => params[:uid])
+    logger.info "User uid: #{params[:uid]}, #{params[:name]}, #{params[:access_token]}"
     if u == nil
       nu = AppUser.new
       nu.uid = params[:uid]
