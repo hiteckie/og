@@ -30,6 +30,21 @@ class StoryController < ApplicationController
 
   end
 
+  def persist_user
+    u = AppUser.find(:uid => params[:uid])
+    if u == nil
+      nu = AppUser.new
+      nu.uid = params[:uid]
+      nu.name = params[:name]
+      nu.access_token = params[:access_token]
+      nu.save
+      logger.info "New user: " + nu.uid
+    else
+      logger.info "Existing user: " + u.uid
+    end
+    render :text => 'success'
+  end
+
   def test_user
     a = AppUser.new
     a.uid = '123456'
