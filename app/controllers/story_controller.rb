@@ -65,8 +65,9 @@ class StoryController < ApplicationController
     u = AppUser.where(:uid => params[:uid])
     logger.info "Num existing users: " + u.count.to_s
     logger.info "User uid: #{params[:uid]}, #{params[:name]}, #{params[:access_token]}"
-    u.access_token = params[:access_token]
-    u.save
+    user = u.first
+    user.access_token = params[:access_token]
+    user.save
     if u.count == 0
       nu = AppUser.new
       nu.uid = params[:uid]

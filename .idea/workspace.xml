@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/og.iml" afterPath="$PROJECT_DIR$/.idea/og.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
     </list>
     <ignored path="og.iws" />
@@ -51,7 +50,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="10" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.6666667">
+            <state line="69" column="9" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.7">
               <folding />
             </state>
           </provider>
@@ -167,7 +166,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1887" />
+    <option name="x" value="-1844" />
     <option name="y" value="-334" />
     <option name="width" value="1373" />
     <option name="height" value="909" />
@@ -660,7 +659,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1887" y="-334" width="1373" height="909" extended-state="0" />
+    <frame x="-1844" y="-334" width="1373" height="909" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -845,7 +844,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="10" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.6666667">
+        <state line="69" column="9" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.7">
           <folding />
         </state>
       </provider>
