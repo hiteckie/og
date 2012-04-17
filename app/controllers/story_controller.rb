@@ -38,9 +38,13 @@ class StoryController < ApplicationController
   def publish_action
     if session[:graph_api] != nil
 
-      #friends = session[:graph_api].put_connections("me", "puapthis:article?")
       app = session[:graph_api].get_object(APP_ID)
+      app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
+      og_url = "http://ogapp.herokuapp.com/story/og_obj"
+      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}?#{params[:og_type]}=#{og_url}")
+      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id
+
 
     else
       logger.info "graph_api not inited"
@@ -88,6 +92,15 @@ class StoryController < ApplicationController
     a.uid = rand(100000).to_s
     a.access_token = 'r708whfshafjksd' + rand(99999).to_s
     a.name = 'name_' + rand(9999).to_s
+    a.save
+    render :text => 'success!'
+  end
+
+  def add_user
+    a = AppUser.new
+    a.uid = params[:uid]
+    a.name = params[:name]
+    a.access_token = params[:access_token]
     a.save
     render :text => 'success!'
   end
