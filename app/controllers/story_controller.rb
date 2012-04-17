@@ -42,7 +42,7 @@ class StoryController < ApplicationController
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
       og_url = "http://ogapp.herokuapp.com/story/og_obj"
-      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}", :object_url => og_url)
+      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}", :object => og_url)
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id
 
     else
