@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/story/index.html.erb" afterPath="$PROJECT_DIR$/app/views/story/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/story/og_obj.html.erb" afterPath="$PROJECT_DIR$/app/views/story/og_obj.html.erb" />
     </list>
     <ignored path="og.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +50,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="36" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.5737052">
+            <state line="63" column="27" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.47808766">
               <folding />
             </state>
           </provider>
@@ -151,8 +148,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1961" />
-    <option name="y" value="-366" />
+    <option name="x" value="-1990" />
+    <option name="y" value="-466" />
     <option name="width" value="1285" />
     <option name="height" value="905" />
   </component>
@@ -644,7 +641,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1961" y="-366" width="1285" height="905" extended-state="0" />
+    <frame x="-1990" y="-466" width="1285" height="905" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -825,7 +822,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="36" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.5737052">
+        <state line="63" column="27" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.47808766">
           <folding />
         </state>
       </provider>
