@@ -6,6 +6,7 @@ gem "bson_ext", "~> 1.5"
 gem "koala"
 gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
+gem "opengraph"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
