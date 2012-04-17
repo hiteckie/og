@@ -1,7 +1,5 @@
 class StoryController < ApplicationController
 
-  graph_api = nil
-
   def index
     logger.info request.params
     #render :text => "Let's publish some actions!"
@@ -53,15 +51,15 @@ class StoryController < ApplicationController
       logger.info "Existing user: " + u.first.to_s
       user = u.first
     end
-    graph_api = Koala::Facebook::API.new(user.access_token)
-    logger.info "Graph API: " + graph_api.to_s
+    session[:graph_api] = Koala::Facebook::API.new(user.access_token)
+    logger.info "Graph API: " + session[:graph_api].to_s
     render :text => 'success'
   end
 
   def test_api
     f_list = ""
-    if graph_api != nil
-      @friends = @graph_api.get_connections("me", "friends")
+    if session[:graph_api] != nil
+      @friends = session[:graph_api].get_connections("me", "friends")
       @friends.each { |f|
         logger.info f.name
         f_list += f.name + "<br>"
