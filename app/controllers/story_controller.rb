@@ -45,9 +45,19 @@ class StoryController < ApplicationController
       pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}?#{params[:og_type]}=#{og_url}")
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id
 
-
     else
       logger.info "graph_api not inited"
+    end
+  end
+
+  def parse_og
+    url = params[:og_url]
+    @obj = nil
+    if url != nil
+      @obj = OpenGraph.fetch(url)
+      logger.info "Obj fetched: " + @obj.to_s
+    else
+      logger.info "url is empty"
     end
   end
 
@@ -55,6 +65,8 @@ class StoryController < ApplicationController
     u = AppUser.where(:uid => params[:uid])
     logger.info "Num existing users: " + u.count.to_s
     logger.info "User uid: #{params[:uid]}, #{params[:name]}, #{params[:access_token]}"
+    u.access_token = params[:access_token]
+    u.save
     if u.count == 0
       nu = AppUser.new
       nu.uid = params[:uid]

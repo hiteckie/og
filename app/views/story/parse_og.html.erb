@@ -1,0 +1,8 @@
+
+<% if !@obj %>
+    No OG found.
+<% else %>
+    <% @obj.keys.each { |k| %>
+        <%= k %>: <%= @obj[k] %><br>
+    <% } %>
+<% end %>
