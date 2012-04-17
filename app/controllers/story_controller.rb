@@ -66,8 +66,11 @@ class StoryController < ApplicationController
         logger.info f.name
         f_list += f.name + "<br>"
       }
+      logger.info "called friends"
+    else
+      logger.info "graph_api not inited"
     end
-    render :text => f_list
+    render :text => f_list + " yoyoyo"
   end
 
   def test_user
