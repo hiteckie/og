@@ -33,6 +33,7 @@ class StoryController < ApplicationController
     @og_description = params[:og_description] ? params[:og_description] : 'Default description'
     @og_image = params[:og_image] ? params[:og_image] : 'http://ogp.me/logo.png'
     logger.info "og_url: " + @og_url
+    render :layout => nil
   end
 
   def publish_action
