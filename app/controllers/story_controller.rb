@@ -61,8 +61,8 @@ class StoryController < ApplicationController
     if session[:graph_api] != nil
       @friends = session[:graph_api].get_connections("me", "friends")
       @friends.each { |f|
-        logger.info f.name
-        f_list += f.name + "<br>"
+        logger.info f.["name"]
+        f_list += f["name"] + "<br>"
       }
       logger.info "called friends"
     else
