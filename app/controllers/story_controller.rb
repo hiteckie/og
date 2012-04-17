@@ -39,7 +39,7 @@ class StoryController < ApplicationController
     if session[:graph_api] != nil
 
       #friends = session[:graph_api].put_connections("me", "puapthis:article?")
-      app = session[:graph_api].get_connections(APP_ID)
+      app = session[:graph_api].get_object(APP_ID)
       logger.info "App namespace: " + app['namespace']
 
     else
