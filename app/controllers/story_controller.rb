@@ -35,6 +35,18 @@ class StoryController < ApplicationController
     logger.info "og_url: " + @og_url
   end
 
+  def publish_action
+    if session[:graph_api] != nil
+
+      #friends = session[:graph_api].put_connections("me", "puapthis:article?")
+      app = session[:graph_api].get_connections(APP_ID)
+      logger.info "App namespace: " + app['namespace']
+
+    else
+      logger.info "graph_api not inited"
+    end
+  end
+
   def persist_user
     u = AppUser.where(:uid => params[:uid])
     logger.info "Num existing users: " + u.count.to_s
