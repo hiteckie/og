@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/<%= @og_type %>#">
-  <meta property="fb:app_id"      content="<%= APP_ID %>" />
-  <meta property="og:type"        content="<%= @og_type %>" />
-  <meta property="og:url"         content="<%= @og_url %>" />
-  <meta property="og:title"       content="<%= @og_title %>" />
-  <meta property="og:description" content="<%= @og_description %>" />
-  <meta property="og:image"       content="<%= @og_image %>" />
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= params[:og_type] %>: http://ogp.me/ns/<%= params[:og_type] %>#">
+  <meta property="fb:app_id" content="<%= APP_ID %>" />
+  <% params.keys.each { |k| %>
+      <% if k.to_s.start_with?('og') %>
+      <meta property="<%= k %>" content="<%= params[k] %>" />
+      <% end %>
+  <% } %>
+
 
 </head>
 

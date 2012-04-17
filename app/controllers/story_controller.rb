@@ -42,9 +42,9 @@ class StoryController < ApplicationController
       app = session[:graph_api].get_object(APP_ID)
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
-      og_url = "http://ogapp.herokuapp.com/story/og_obj?og_type=" + params[:og_type] + '&t=' + Time.now.to_i.to_s
-      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}", params[:og_type] => og_url)
-      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id
+      #og_url = "http://ogapp.herokuapp.com/story/og_obj?og_type=" + params[:og_type] + '&og_' + params[:og_image] + '&t=' + Time.now.to_i.to_s
+      #pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params[:og_action]}", params[:og_type] => og_url)
+      #logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
     else
       logger.info "graph_api not inited"
