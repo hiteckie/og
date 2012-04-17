@@ -1,6 +1,6 @@
 class StoryController < ApplicationController
 
-  @graph_api = nil
+  graph_api = nil
 
   def index
     logger.info request.params
@@ -53,14 +53,14 @@ class StoryController < ApplicationController
       logger.info "Existing user: " + u.first.to_s
       user = u.first
     end
-    @graph_api = Koala::Facebook::API.new(user.access_token)
-    logger.info "Graph API: " + @graph_api.to_s
+    graph_api = Koala::Facebook::API.new(user.access_token)
+    logger.info "Graph API: " + graph_api.to_s
     render :text => 'success'
   end
 
   def test_api
     f_list = ""
-    if @graph_api != nil
+    if graph_api != nil
       @friends = @graph_api.get_connections("me", "friends")
       @friends.each { |f|
         logger.info f.name
