@@ -1,5 +1,7 @@
 class StoryController < ApplicationController
 
+  GRAPH_API = nil
+
   def index
     logger.info request.params
     #render :text => "Let's publish some actions!"
@@ -27,7 +29,12 @@ class StoryController < ApplicationController
   end
 
   def og_obj
-
+    @og_type = params[:og_type] ? params[:og_type] : 'article'
+    @og_url = request.url
+    @og_title = params[:og_title] ? params[:og_title] : 'Default title'
+    @og_description = params[:og_description] ? params[:og_description] : 'Default description'
+    @og_image = params[:og_image] ? params[:og_image] : 'http://ogp.me/logo.png'
+    logger.info "og_url: " + @og_url
   end
 
   def persist_user
@@ -40,11 +47,26 @@ class StoryController < ApplicationController
       nu.name = params[:name]
       nu.access_token = params[:access_token]
       nu.save
+      user = nu
       logger.info "New user: " + nu.uid
     else
       logger.info "Existing user: " + u.first.to_s
+      user = u.first
     end
+    GRAPH_API = Koala::Facebook::API.new(user.access_token)
     render :text => 'success'
+  end
+
+  def test_api
+    f_list = ""
+    if GRAPH_API != nil
+      @friends = GRAPH_API.get_connections("me", "friends")
+      @friends.each { |f|
+        logger.info f.name
+        f_list += f.name + "<br>"
+      }
+    end
+    render :text => f_list
   end
 
   def test_user
