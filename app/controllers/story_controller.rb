@@ -2,6 +2,11 @@ class StoryController < ApplicationController
 
   def index
     logger.info request.params
+    @obj = Hash.new
+    if params[:do_action] == 'prefill'
+      @obj = OpenGraph.fetch(params['og:url'])
+      logger.info "og:url: " + params['og:url']
+    end
     #render :text => "Let's publish some actions!"
   end
 
@@ -53,7 +58,7 @@ class StoryController < ApplicationController
         #end
       }
 
-      pub_id = pub_backend(params['og:action'], obj, params['og:url'])
+      pub_id = pub_backend(params['action'], obj, params['url'])
       #og_url += "&content_url=" + params[:content_url]
       #logger.info "og_url: " + og_url
       #pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
