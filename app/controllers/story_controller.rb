@@ -43,14 +43,20 @@ class StoryController < ApplicationController
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
       og_url = "http://ogapp.herokuapp.com/story/og_obj?"
+      obj = Hash.new
       params.keys.each { |k|
-        if k.starts_with?('og')
-          og_url += "&" + k + "=" + params[k]
-        end
+
+        obj[k] = params[k]
+
+        #if k.starts_with?('og')
+        #  og_url += "&" + k + "=" + params[k]
+        #end
       }
-      og_url += "&content_url=" + params[:content_url]
-      logger.info "og_url: " + og_url
-      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
+
+      pub_id = pub_backend(params['og:action'], obj, params['og:url'])
+      #og_url += "&content_url=" + params[:content_url]
+      #logger.info "og_url: " + og_url
+      #pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
     else
@@ -59,7 +65,12 @@ class StoryController < ApplicationController
   end
 
   def parse_og
-    url = params[:og_url]
+    url = params["og:url"]
+    return parse_og_backend(url)
+  end
+
+  def parse_og_backend(url)
+    og_action = params["og:action"]
     @obj = nil
     if url != nil
       @obj = OpenGraph.fetch(url)
@@ -67,6 +78,28 @@ class StoryController < ApplicationController
     else
       logger.info "url is empty"
     end
+  end
+
+  def pub_backend(og_action, obj, content_url)
+    pub_id = "NOTHING"
+    if session[:graph_api] != nil
+
+      app = session[:graph_api].get_object(APP_ID)
+      app_namespace = app['namespace']
+      logger.info "App namespace: " + app['namespace']
+      og_url = "http://ogapp.herokuapp.com/story/og_obj?"
+      obj.keys.each { |k|
+        og_url += "&og:" + k + "=" + obj[k]
+      }
+      og_url += "&content_url=" + content_url
+      logger.info "og_url: " + og_url
+      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{og_action}", obj['type'] => og_url)
+      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
+
+    else
+      logger.info "graph_api not inited"
+    end
+    return pub_id
   end
 
   def persist_user
@@ -91,6 +124,25 @@ class StoryController < ApplicationController
     session[:graph_api] = Koala::Facebook::API.new(user.access_token)
     logger.info "Graph API: " + session[:graph_api].to_s
     render :text => 'success'
+  end
+
+  def a2u
+    if session[:graph_api] != nil
+
+    end
+  end
+
+  def auth
+
+  end
+
+  def auth_persist
+    u = AppUser.where(:uid => params[:uid])
+    user = u.first
+    user.access_token = params[:access_token]
+    user.save
+    session[:graph_api] = Koala::Facebook::API.new(user.access_token)
+    render :text => "success!"
   end
 
   def test_api
