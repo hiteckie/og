@@ -51,22 +51,26 @@
 
 <h3>PUAP THIS</h3>
 <br>
-
-
 <p></p>
+
+
 <form action="/story/index">
-  news.read object url: <input type="text" name="og:url" size="30"><input type="hidden" name="do_action" value="prefill"> <input type="submit" value="Publish">
+  news.read object url: <input type="text" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="hidden" name="do_action" value="prefill"> <input type="submit" value="Get metadata">
 </form>
 <hr/>
-<form action="/story/publish_action">
-og:action: <input type="text" name="og:action" value="<%= @obj['action'] %>"><br>
-og:type: <input type="text" name="og:type" value="<%= @obj['type'] %>"><br>
-og:title: <input type="text" name="og:title" value="<%= @obj['title'] %>"><br>
-og:description: <input type="text" name="og:description" value="<%= @obj['description'] %>"><br>
-og:image: <input type="text" name="og:image" value="<%= @obj['image'] %>"><br>
-<!-- content_url: <input type="text" name="content_url"><br>  -->
-<input type="submit" value="Publish">
-</form>
+<% if @obj %>
+  <% @obj.keys.each { |x| %>
+    og:<%= x %>: <b><%= @obj[x] %></b><br>
+  <% } %>
+    <br>
+    <form action="/story/publish_action">
+      OG action: <input type="text" name="og:action">
+      <input type="hidden" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="submit" value="Publish">
+    </form>
+<% else %>
+  <!-- test -->
+<% end %>
+
 
 <hr/>
 <a href="test_api">Test API</a>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= params[:og_type] %>: http://ogp.me/ns/<%= params[:og_type] %>#">
   <meta property="fb:app_id" content="<%= APP_ID %>" />
-  <% params.keys.each { |k| %>
+  <% obj.keys.each { |k| %>
       <% if k.to_s.start_with?('og') %>
-      <meta property="<%= k %>" content="<%= params[k] %>" />
+      <meta property="<%= k %>" content="<%= obj[k] %>" />
       <% end %>
   <% } %>
 </head>

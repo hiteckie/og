@@ -2,10 +2,16 @@ class StoryController < ApplicationController
 
   def index
     logger.info request.params
-    @obj = Hash.new
+    @obj = false
     if params[:do_action] == 'prefill'
       @obj = OpenGraph.fetch(params['og:url'])
-      logger.info "og:url: " + params['og:url']
+      if @obj
+        logger.info "og:url: " + params['og:url']
+        logger.info "Obj: " + @obj.to_s
+        @obj.keys.each { |x|
+          logger.info "og:" + x + " : " + @obj[x]
+        }
+      end
     end
     #render :text => "Let's publish some actions!"
   end
@@ -41,6 +47,23 @@ class StoryController < ApplicationController
     render :layout => nil
   end
 
+  def ext_og_obj
+    @obj = OpenGraph.fetch(params['og:url'])
+    if @obj
+      logger.info "og:url: " + params['og:url']
+      logger.info "Obj: " + @obj.to_s
+      @obj.keys.each { |x|
+        logger.info "og:" + x + " : " + @obj[x]
+      }
+    else
+      @obj = []
+    end
+  end
+
+  def publish_obj_action
+
+  end
+
   def publish_action
     if session[:graph_api] != nil
 
@@ -48,21 +71,20 @@ class StoryController < ApplicationController
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
       og_url = "http://ogapp.herokuapp.com/story/og_obj?"
-      obj = Hash.new
-      params.keys.each { |k|
+      @obj = OpenGraph.fetch(params['og:url'])
+      if @obj
+        logger.info "og:url: " + params['og:url']
+        logger.info "Obj: " + @obj.to_s
+        @obj.keys.each { |x|
+          logger.info "og:" + x + " : " + @obj[x]
+        }
+      end
 
-        obj[k] = params[k]
-
-        #if k.starts_with?('og')
-        #  og_url += "&" + k + "=" + params[k]
-        #end
-      }
-
-      pub_id = pub_backend(params['action'], obj, params['url'])
+      #pub_id = pub_backend(params['action'], obj, params['url'])
       #og_url += "&content_url=" + params[:content_url]
       #logger.info "og_url: " + og_url
       #pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
-      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
+      #logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
     else
       logger.info "graph_api not inited"
