@@ -84,6 +84,7 @@ class StoryController < ApplicationController
       #og_url += "&content_url=" + params[:content_url]
       og_url = params['og:url']
       logger.info "og_url: " + og_url
+      app_namespace = 'puapthis'
       pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
