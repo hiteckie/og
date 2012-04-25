@@ -70,7 +70,7 @@ class StoryController < ApplicationController
       app = session[:graph_api].get_object(APP_ID)
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
-      og_url = "http://ogapp.herokuapp.com/story/og_obj?"
+      og_url = "http://ogapp.herokuapp.com/story/ext_og_obj?"
       @obj = OpenGraph.fetch(params['og:url'])
       if @obj
         logger.info "og:url: " + params['og:url']
@@ -82,9 +82,10 @@ class StoryController < ApplicationController
 
       #pub_id = pub_backend(params['action'], obj, params['url'])
       #og_url += "&content_url=" + params[:content_url]
-      #logger.info "og_url: " + og_url
-      #pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
-      #logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
+      og_url = params['og:url']
+      logger.info "og_url: " + og_url
+      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", params['og:type'] => og_url)
+      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
     else
       logger.info "graph_api not inited"

@@ -3,7 +3,11 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @obj['og:type'] %>: http://ogp.me/ns/<%= @obj['og:type'] %>#">
   <meta property="fb:app_id" content="<%= APP_ID %>" />
   <% @obj.keys.each { |k| %>
-          <meta property="og:<%= k %>" content="<%= @obj[k] %>" />
+      <% val = @obj[k] %>
+      <% if k == 'url' %>
+        <% val = request.url %>
+      <% end %>
+          <meta property="og:<%= k %>" content="<%= val %>" />
   <% } %>
 </head>
 
