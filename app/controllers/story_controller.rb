@@ -71,7 +71,7 @@ class StoryController < ApplicationController
       app = session[:graph_api].get_object(APP_ID)
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
-      og_url = "http://ogapp.herokuapp.com/story/ext_og_obj?" + params[:'og:url']
+      og_url = "http://ogapp.herokuapp.com/story/ext_og_obj?og:url=" + params[:'og:url']
       @obj = OpenGraph.fetch(params['og:url'])
       if @obj
         logger.info "og:url: " + params['og:url']
