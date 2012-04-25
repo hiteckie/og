@@ -83,7 +83,7 @@ class StoryController < ApplicationController
 
       #pub_id = pub_backend(params['action'], obj, params['url'])
       #og_url += "&content_url=" + params[:content_url]
-      og_url = params['og:url']
+      #og_url = params['og:url']
       obj_type =  @obj['type']
       logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
       pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", "#{obj_type}" => og_url)

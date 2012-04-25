@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
     </list>
     <ignored path="og.iws" />
@@ -32,7 +31,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="99" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.7290168">
+            <state line="85" column="7" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.67146283">
               <folding />
             </state>
           </provider>
@@ -157,8 +156,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1567" />
-    <option name="y" value="-476" />
+    <option name="x" value="-1678" />
+    <option name="y" value="-441" />
     <option name="width" value="1316" />
     <option name="height" value="980" />
   </component>
@@ -650,7 +649,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1567" y="-476" width="1316" height="980" extended-state="0" />
+    <frame x="-1678" y="-441" width="1316" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -811,7 +810,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="99" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.7290168">
+        <state line="85" column="7" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.67146283">
           <folding />
         </state>
       </provider>
