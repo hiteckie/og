@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" afterPath="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" />
     </list>
     <ignored path="og.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="story_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="72" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.20544554">
+            <state line="57" column="38" selection-start="1614" selection-end="1614" vertical-scroll-proportion="-7.0">
               <folding />
             </state>
           </provider>
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ext_og_obj_id.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ext_og_obj_id.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="61" selection-start="241" selection-end="241" vertical-scroll-proportion="-2.4615386">
+            <state line="15" column="26" selection-start="474" selection-end="474" vertical-scroll-proportion="0.3018868">
               <folding />
             </state>
           </provider>
@@ -150,14 +150,14 @@
         <option value="$PROJECT_DIR$/app/views/story/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/story/ext_og_obj.html.erb" />
         <option value="$PROJECT_DIR$/app/models/og_object.rb" />
-        <option value="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/story_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1755" />
-    <option name="y" value="-206" />
+    <option name="x" value="-1513" />
+    <option name="y" value="-207" />
     <option name="width" value="1316" />
     <option name="height" value="980" />
   </component>
@@ -658,7 +658,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1755" y="-206" width="1316" height="980" extended-state="0" />
+    <frame x="-1513" y="-207" width="1316" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -814,16 +814,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="61" selection-start="241" selection-end="241" vertical-scroll-proportion="-2.4615386">
+        <state line="57" column="38" selection-start="1614" selection-end="1614" vertical-scroll-proportion="-7.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="72" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.20544554">
+        <state line="15" column="26" selection-start="474" selection-end="474" vertical-scroll-proportion="0.3018868">
           <folding />
         </state>
       </provider>

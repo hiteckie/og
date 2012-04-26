@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @top_obj_type %>: http://ogp.me/ns/<%= @top_obj_type %>#">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @obj['type'] %>: http://ogp.me/ns/<%= @obj['type'] %>#">
   <meta property="fb:app_id" content="<%= APP_ID %>" />
   <% @obj.keys.each { |k| %>
       <% val = @obj[k] %>
@@ -13,7 +13,7 @@
 
 <body style="margin: 0">
 
-<iframe src="" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+<iframe src="<%= @obj['url'] %>" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
 </body>
 </html>
 
