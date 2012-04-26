@@ -20,7 +20,7 @@ class StoryController < ApplicationController
     if session[:graph_api] != nil
       @me = session[:graph_api].get_object('me')
       logger.info "Me: " + @me['username']
-      @vanity = @me
+      @vanity = @me['username']
       @stories = Story.find(:all)
     end
     #render :text => "Let's publish some actions!"

@@ -77,7 +77,7 @@
 <% i = 1 %>
     <div style="font-size: 10px">
 <% @stories.each { |x| %>
-    <%= i %><a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>">Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %></a><br>
+    <%= i %>Story ID: <a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>"><%= x.story_id %></a>Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %><br>
     <% i += 1 %>
 <% } %>
 <% end %>
