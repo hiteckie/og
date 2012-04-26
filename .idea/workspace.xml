@@ -31,7 +31,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="67" selection-start="1814" selection-end="1865" vertical-scroll-proportion="0.44124702">
+            <state line="87" column="85" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.70983213">
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1678" />
-    <option name="y" value="-441" />
+    <option name="x" value="-1363" />
+    <option name="y" value="-774" />
     <option name="width" value="1316" />
     <option name="height" value="980" />
   </component>
@@ -649,7 +649,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1678" y="-441" width="1316" height="980" extended-state="0" />
+    <frame x="-1363" y="-774" width="1316" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -810,7 +810,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="67" selection-start="1814" selection-end="1865" vertical-scroll-proportion="0.44124702">
+        <state line="87" column="85" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.70983213">
           <folding />
         </state>
       </provider>
