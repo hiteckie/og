@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @obj['type'] %>: http://ogp.me/ns/<%= @obj['type'] %>#">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @obj["type"] %>: http://ogp.me/ns/<%= @obj["type"] %>#">
   <meta property="fb:app_id" content="<%= APP_ID %>" />
   <% @obj.keys.each { |k| %>
       <% val = @obj[k] %>
