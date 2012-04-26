@@ -143,10 +143,10 @@ class StoryController < ApplicationController
       #og_url = params['og:url']
       action_str = app_namespace + ":" + params['og:action']
       obj_type =  @obj['type']
-      if obj_type == 'video.other'
+      if params['og:action'] == 'video.watches'
         obj_type = 'video'
         action_str = 'video.watches'
-      elsif obj_type == 'news.reads'
+      elsif params['og:action'] == 'news.reads'
         action_str = 'news.reads'
       end
 
