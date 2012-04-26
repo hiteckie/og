@@ -156,10 +156,10 @@ class StoryController < ApplicationController
         logger.info "PUBLISHING: App namespace: " + app['namespace'] + ", pub_id: " + @pub_id.first.to_s
 
         # save that story
-        s = Story.where(story_id: @pub_id.first.id)
+        s = Story.where(story_id: @pub_id['id'])
         if s.first == nil
           s = Story.new
-          s.story_id = @pub_id.first.id
+          s.story_id = @pub_id['id']
           s.og_action = action_str
           s.og_type = obj_type
           s.og_url = og_url
