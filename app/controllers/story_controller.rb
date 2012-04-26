@@ -62,6 +62,11 @@ class StoryController < ApplicationController
     else
       @obj = []
     end
+    @top_obj_type = @obj['type']
+    if @obj['type'] == 'video.other'
+      @top_obj_type = 'video'
+    end
+
     render :layout => nil
   end
 
