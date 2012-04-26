@@ -63,7 +63,7 @@
     og:<%= x %>: <b><%= @obj[x] %></b><br>
   <% } %>
     <br>
-    og:url: <a href="http://ogapp.heroku.com/story/ext_og_obj/<%= @url_obj.id.to_s %>">http://ogapp.heroku.com/story/ext_og_obj/<%= @url_obj.id.to_s %></a>
+    og:url: <a href="http://ogapp.heroku.com/story/ext_og_obj_id/<%= @url_obj.id.to_s %>">http://ogapp.heroku.com/story/ext_og_obj/<%= @url_obj.id.to_s %></a>
     <br>
     <form action="/story/publish_action">
       OG action: <input type="text" name="og:action">
@@ -74,11 +74,14 @@
 <% end %>
 <% if @stories.first != nil %>
 <hr/>
+<% i = 1 %>
+    <div style="font-size: 10px">
 <% @stories.each { |x| %>
-    <a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>">Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %></a><br>
+    <%= i %><a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>">Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %></a><br>
+    <% i += 1 %>
 <% } %>
 <% end %>
-
+</div>
 
 
 <hr/>
