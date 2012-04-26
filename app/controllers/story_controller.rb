@@ -15,9 +15,14 @@ class StoryController < ApplicationController
         }
       end
     end
-    @me = session[:graph_api].get_object('me')
-    @vanity = @me.username
-    @stories = Story.find(:all)
+    @stories = []
+    @vanity = nil
+    if session[:graph_api] != nil
+      @me = session[:graph_api].get_object('me')
+      logger.info "Me: " + @me['username']
+      @vanity = @me
+      @stories = Story.find(:all)
+    end
     #render :text => "Let's publish some actions!"
   end
 
