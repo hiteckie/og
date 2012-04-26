@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/story/index.html.erb" afterPath="$PROJECT_DIR$/app/views/story/index.html.erb" />
-    </list>
+    <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="" />
     <ignored path="og.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +29,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="21" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-48.0">
+            <state line="8" column="98" selection-start="258" selection-end="258" vertical-scroll-proportion="-4.923077">
               <folding />
             </state>
           </provider>
@@ -95,7 +92,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/story/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="108" selection-start="2931" selection-end="2931" vertical-scroll-proportion="0.81038964">
+            <state line="90" column="115" selection-start="3121" selection-end="3121" vertical-scroll-proportion="0.8738502">
               <folding />
             </state>
           </provider>
@@ -158,9 +155,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1435" />
-    <option name="y" value="-177" />
+    <option name="y" value="-168" />
     <option name="width" value="1316" />
-    <option name="height" value="980" />
+    <option name="height" value="971" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -659,7 +656,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1435" y="-177" width="1316" height="980" extended-state="0" />
+    <frame x="-1435" y="-168" width="1316" height="971" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
@@ -819,14 +816,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="21" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-48.0">
+        <state line="8" column="98" selection-start="258" selection-end="258" vertical-scroll-proportion="-4.923077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/story/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="108" selection-start="2931" selection-end="2931" vertical-scroll-proportion="0.81038964">
+        <state line="90" column="115" selection-start="3121" selection-end="3121" vertical-scroll-proportion="0.8738502">
           <folding />
         </state>
       </provider>
