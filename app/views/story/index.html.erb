@@ -63,6 +63,8 @@
     og:<%= x %>: <b><%= @obj[x] %></b><br>
   <% } %>
     <br>
+    og:url: <a href="<%= @url_obj.url.to_s %>"><%= @url_obj.url.to_s %></a>
+    <br>
     <form action="/story/publish_action">
       OG action: <input type="text" name="og:action">
       <input type="hidden" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="submit" value="Publish">

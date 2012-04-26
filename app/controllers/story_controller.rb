@@ -3,8 +3,10 @@ class StoryController < ApplicationController
   def index
     logger.info request.params
     @obj = false
+    @url_obj = nil
     if params[:do_action] == 'prefill'
       @obj = OpenGraph.fetch(params['og:url'])
+      @url_obj = get_url_obj(params['og:url'])
       if @obj
         logger.info "og:url: " + params['og:url']
         logger.info "Obj: " + @obj.to_s
@@ -135,8 +137,9 @@ class StoryController < ApplicationController
       if obj_type == 'video.other'
         obj_type = 'video'
       end
+
       logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
-      pub_id = session[:graph_api].put_connections("me", "#{params['og:action']}", "#{obj_type}" => og_url)
+      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", "#{obj_type}" => og_url)
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
 
     else
