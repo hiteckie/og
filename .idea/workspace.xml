@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f7b8f0-cd0a-4668-ae1d-d57bedc80233" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/story/ext_og_obj.html.erb" afterPath="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/story_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/story_controller.rb" />
     </list>
     <ignored path="og.iws" />
@@ -28,19 +30,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="story_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="85" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.70983213">
+            <state line="57" column="15" selection-start="1594" selection-end="1603" vertical-scroll-proportion="-7.6153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ext_og_obj.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj.html.erb">
+      <file leaf-file-name="og_object.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/og_object.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="81" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
+            <state line="4" column="21" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="article.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/article.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="2" selection-start="16" selection-end="107" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ext_og_obj_id.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="43" selection-start="426" selection-end="426" vertical-scroll-proportion="0.22138365">
               <folding />
             </state>
           </provider>
@@ -55,28 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse_og.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/story/parse_og.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="20" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="publish_action.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/story/publish_action.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="103" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/article.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/public/testog.html" />
         <option value="$PROJECT_DIR$/public/channel.html" />
         <option value="$PROJECT_DIR$/config/initializers/mime_types.rb" />
@@ -151,13 +151,15 @@
         <option value="$PROJECT_DIR$/app/views/story/og_obj.html.erb" />
         <option value="$PROJECT_DIR$/app/views/story/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/story/ext_og_obj.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/og_object.rb" />
         <option value="$PROJECT_DIR$/app/controllers/story_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1363" />
-    <option name="y" value="-774" />
+    <option name="x" value="-1621" />
+    <option name="y" value="-352" />
     <option name="width" value="1316" />
     <option name="height" value="980" />
   </component>
@@ -522,6 +524,15 @@
         <option name="RakeTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method>
+        <option name="RakeTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="false" name="test" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="og" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -649,14 +660,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1363" y="-774" width="1316" height="980" extended-state="0" />
+    <frame x="-1621" y="-352" width="1316" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293023" sideWeight="0.72143775" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31596828" sideWeight="0.9992453" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22239748" sideWeight="0.9887767" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22239748" sideWeight="0.6840317" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2631579" sideWeight="0.42139536" order="7" side_tool="true" content_ui="tabs" />
@@ -665,7 +677,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31650245" sideWeight="0.9992453" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27327326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -727,19 +738,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="64" selection-start="206" selection-end="239" vertical-scroll-proportion="0.35059762" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="66" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.3625498" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="29" selection-start="112" selection-end="112" vertical-scroll-proportion="0.19123507" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/backtrace_silencers.rb">
@@ -789,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="81" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/story/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="36" selection-start="1940" selection-end="1940" vertical-scroll-proportion="-13.92">
@@ -808,9 +802,30 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="2" selection-start="16" selection-end="107" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="85" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.70983213">
+        <state line="57" column="15" selection-start="1594" selection-end="1603" vertical-scroll-proportion="-7.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/og_object.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="21" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/story/ext_og_obj_id.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="426" selection-end="426" vertical-scroll-proportion="0.22138365">
           <folding />
         </state>
       </provider>

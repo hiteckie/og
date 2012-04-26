@@ -47,11 +47,15 @@ class StoryController < ApplicationController
     render :layout => nil
   end
 
-  def ext_og_obj
-    @obj = OpenGraph.fetch(params['og:url'])
+  def ext_og_obj_id
+    new_obj = OgObject.find(params[:id])
+    logger.info "\nYESYES: " + new_obj.url
+    @obj = OpenGraph.fetch(new_obj.url)
     if @obj
-      logger.info "og:url: " + params['og:url']
+      @obj['url'] = "http://ogapp.herokuapp.com/story/ext_og_obj_id?id=" + new_obj.id.to_s
+      logger.info "og:url: " + new_obj.url.to_s
       logger.info "Obj: " + @obj.to_s
+      @orig_url = new_obj.url
       @obj.keys.each { |x|
         logger.info "og:" + x + " : " + @obj[x]
       }
@@ -59,6 +63,27 @@ class StoryController < ApplicationController
       @obj = []
     end
     render :layout => nil
+  end
+
+  def ext_og_obj
+    new_obj = OgObject.where(url: params['og:url'])
+    og_obj = nil
+    if new_obj != []
+      logger.info "URL OBJ FOUND: " + new_obj.first.id.to_s
+      og_obj = new_obj.first
+    else
+      logger.info "URL OBJ NOT FOUND!!!!"
+      new_obj = OgObject.new
+      new_obj.url = params['og:url']
+      new_obj.save
+      og_obj = new_obj
+    end
+
+    if og_obj != nil
+      redirect_to "/story/ext_og_obj_id?id=" + og_obj.id.to_s
+    else
+      render :layout => nil
+    end
   end
 
   def publish_obj_action
