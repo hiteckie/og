@@ -71,7 +71,7 @@ class StoryController < ApplicationController
   end
 
   def ext_og_obj
-    new_obj = OgObject.where(url: params['og:url'])
+    new_obj = get_url_obj(params['og:url'])
     og_obj = nil
     if new_obj != []
       logger.info "URL OBJ FOUND: " + new_obj.first.id.to_s
@@ -91,6 +91,22 @@ class StoryController < ApplicationController
     end
   end
 
+  def get_url_obj(og_url)
+    new_obj = OgObject.where(url: og_url)
+    og_obj = nil
+    if new_obj != []
+      logger.info "URL OBJ FOUND: " + new_obj.first.id.to_s
+      og_obj = new_obj.first
+    else
+      logger.info "URL OBJ NOT FOUND!!!!"
+      new_obj = OgObject.new
+      new_obj.url = params['og:url']
+      new_obj.save
+      og_obj = new_obj
+    end
+    return new_obj
+  end
+
   def publish_obj_action
 
   end
@@ -101,7 +117,8 @@ class StoryController < ApplicationController
       app = session[:graph_api].get_object(APP_ID)
       app_namespace = app['namespace']
       logger.info "App namespace: " + app['namespace']
-      og_url = "http://ogapp.herokuapp.com/story/ext_og_obj?og:url=" + params[:'og:url']
+      url_obj = get_url_obj(params['og:url'])
+      og_url = "http://ogapp.herokuapp.com/story/ext_og_obj_id/" + url_obj.id.to_s
       @obj = OpenGraph.fetch(params['og:url'])
       if @obj
         logger.info "og:url: " + params['og:url']
