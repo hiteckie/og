@@ -104,7 +104,7 @@ class StoryController < ApplicationController
       new_obj.save
       og_obj = new_obj
     end
-    return new_obj
+    return og_obj
   end
 
   def publish_obj_action
