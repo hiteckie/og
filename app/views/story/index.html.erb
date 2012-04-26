@@ -57,13 +57,13 @@
 <form action="/story/index">
   OG object url: <input type="text" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="hidden" name="do_action" value="prefill"> <input type="submit" value="Get metadata">
 </form>
-<hr/>
 <% if @obj %>
+<hr/>
   <% @obj.keys.each { |x| %>
     og:<%= x %>: <b><%= @obj[x] %></b><br>
   <% } %>
     <br>
-    og:url: <a href="<%= @url_obj.url.to_s %>"><%= @url_obj.url.to_s %></a>
+    og:url: <a href="http://ogapp.heroku.com/story/ext_og_obj/<%= @url_obj.id.to_s %>">http://ogapp.heroku.com/story/ext_og_obj/<%= @url_obj.id.to_s %></a>
     <br>
     <form action="/story/publish_action">
       OG action: <input type="text" name="og:action">
@@ -72,6 +72,13 @@
 <% else %>
   <!-- test -->
 <% end %>
+<% if @stories.first != nil %>
+<hr/>
+<% @stories.each { |x| %>
+    <a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>">Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %></a><br>
+<% } %>
+<% end %>
+
 
 
 <hr/>

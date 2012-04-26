@@ -15,6 +15,9 @@ class StoryController < ApplicationController
         }
       end
     end
+    @me = session[:graph_api].get_object('me')
+    @vanity = @me.username
+    @stories = Story.find(:all)
     #render :text => "Let's publish some actions!"
   end
 
@@ -133,14 +136,33 @@ class StoryController < ApplicationController
       #pub_id = pub_backend(params['action'], obj, params['url'])
       #og_url += "&content_url=" + params[:content_url]
       #og_url = params['og:url']
+      action_str = app_namespace + ":" + params['og:action']
       obj_type =  @obj['type']
       if obj_type == 'video.other'
         obj_type = 'video'
+        action_str = 'video.watches'
+      elsif obj_type == 'news.reads'
+        action_str = 'news.reads'
       end
 
-      logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
-      pub_id = session[:graph_api].put_connections("me", "#{app_namespace}:#{params['og:action']}", "#{obj_type}" => og_url)
-      logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
+      begin
+        logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
+        @pub_id = session[:graph_api].put_connections("me", action_str, "#{obj_type}" => og_url)
+        logger.info "App namespace: " + app['namespace'] + ", pub_id: " + @pub_id.first.to_s
+
+        # save that story
+        s = Story.where(story_id: @pub_id)
+        if s.first == nil
+          s = Story.new
+          s.story_id = @pub_id
+          s.og_action = action_str
+          s.og_type = obj_type
+          s.og_url = og_url
+          s.save
+        end
+      rescue
+        logger.error "Trying to publish action: " + $!
+      end
 
     else
       logger.info "graph_api not inited"
