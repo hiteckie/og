@@ -126,7 +126,6 @@ class StoryController < ApplicationController
 
       app = session[:graph_api].get_object(APP_ID)
       app_namespace = app['namespace']
-      logger.info "App namespace: " + app['namespace']
       url_obj = get_url_obj(params['og:url'])
       og_url = "http://ogapp.herokuapp.com/story/ext_og_obj_id/" + url_obj.id.to_s
       @obj = OpenGraph.fetch(params['og:url'])
@@ -149,11 +148,12 @@ class StoryController < ApplicationController
       elsif params['og:action'] == 'news.reads'
         action_str = 'news.reads'
       end
+      logger.info "Final action_str: " + action_str
 
       begin
         logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
         @pub_id = session[:graph_api].put_connections("me", action_str, "#{obj_type}" => og_url)
-        logger.info "App namespace: " + app['namespace'] + ", pub_id: " + @pub_id.first.to_s
+        logger.info "PUBLISHING: App namespace: " + app['namespace'] + ", pub_id: " + @pub_id.first.to_s
 
         # save that story
         s = Story.where(story_id: @pub_id)
@@ -166,6 +166,7 @@ class StoryController < ApplicationController
           s.save
         end
       rescue Koala::Facebook::APIError => exc
+        logger.info "ERROR WHILE PUBLISHING!!!!!!!"
         logger.error("Problems publishing action: "+ exc.message)
       end
 

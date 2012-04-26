@@ -31,7 +31,7 @@
       <file leaf-file-name="story_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="35" selection-start="3968" selection-end="3968" vertical-scroll-proportion="0.41212872">
+            <state line="168" column="50" selection-start="4756" selection-end="4756" vertical-scroll-proportion="0.8675743">
               <folding />
             </state>
           </provider>
@@ -94,7 +94,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/story/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="21" selection-start="2673" selection-end="2673" vertical-scroll-proportion="-24.96">
+            <state line="54" column="73" selection-start="1940" selection-end="1940" vertical-scroll-proportion="-6.7058825">
               <folding />
             </state>
           </provider>
@@ -818,14 +818,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/story/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="21" selection-start="2673" selection-end="2673" vertical-scroll-proportion="-24.96">
+        <state line="54" column="73" selection-start="1940" selection-end="1940" vertical-scroll-proportion="-6.7058825">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/story_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="35" selection-start="3968" selection-end="3968" vertical-scroll-proportion="0.41212872">
+        <state line="168" column="50" selection-start="4756" selection-end="4756" vertical-scroll-proportion="0.8675743">
           <folding />
         </state>
       </provider>
