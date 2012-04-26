@@ -166,7 +166,7 @@ class StoryController < ApplicationController
           s.save
         end
       rescue
-        logger.error "Trying to publish action: " + $!
+        logger.error "Trying to publish action: " + $!.to_s
       end
 
     else
