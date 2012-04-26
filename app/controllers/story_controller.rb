@@ -132,7 +132,6 @@ class StoryController < ApplicationController
       #og_url += "&content_url=" + params[:content_url]
       #og_url = params['og:url']
       obj_type =  @obj['type']
-      obj_type = 'video'
       logger.info "publish_action OG_URL: " + @obj['type'] + ':' + og_url
       pub_id = session[:graph_api].put_connections("me", "#{params['og:action']}", "#{obj_type}" => og_url)
       logger.info "App namespace: " + app['namespace'] + ", pub_id: " + pub_id.first.to_s
