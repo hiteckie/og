@@ -165,8 +165,8 @@ class StoryController < ApplicationController
           s.og_url = og_url
           s.save
         end
-      rescue
-        logger.error "Trying to publish action: " + $!.to_s
+      rescue Koala::Facebook::APIError => exc
+        logger.error("Problems publishing action: "+self.inspect+" "+exc.message)
       end
 
     else
