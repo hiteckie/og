@@ -166,12 +166,14 @@ class StoryController < ApplicationController
           s.save
         end
       rescue Koala::Facebook::APIError => exc
-        logger.error("Problems publishing action: "+self.inspect+" "+exc.message)
+        logger.error("Problems publishing action: "+ exc.message)
       end
 
     else
       logger.info "graph_api not inited"
     end
+
+    redirect_to :action => "index"
   end
 
   def parse_og
