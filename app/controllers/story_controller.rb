@@ -48,14 +48,14 @@ class StoryController < ApplicationController
   end
 
   def ext_og_obj_id
-    new_obj = OgObject.find(params[:id])
-    logger.info "\nYESYES: " + new_obj.url
-    @obj = OpenGraph.fetch(new_obj.url)
+    @new_obj = OgObject.find(params[:id])
+    logger.info "\nYESYES: " + @new_obj.url
+    @obj = OpenGraph.fetch(@new_obj.url)
     if @obj
-      @obj['url'] = "http://ogapp.herokuapp.com/story/ext_og_obj_id/" + new_obj.id.to_s
-      logger.info "og:url: " + new_obj.url.to_s
+      @obj['url'] = "http://ogapp.herokuapp.com/story/ext_og_obj_id/" + @new_obj.id.to_s
+      logger.info "og:url: " + @new_obj.url.to_s
       logger.info "Obj: " + @obj.to_s
-      @orig_url = new_obj.url
+      @orig_url = @new_obj.url
       @obj.keys.each { |x|
         logger.info "og:" + x + " : " + @obj[x]
       }
@@ -73,9 +73,9 @@ class StoryController < ApplicationController
   def ext_og_obj
     new_obj = get_url_obj(params['og:url'])
     og_obj = nil
-    if new_obj != []
-      logger.info "URL OBJ FOUND: " + new_obj.first.id.to_s
-      og_obj = new_obj.first
+    if new_obj != nil
+      logger.info "URL OBJ FOUND: " + new_obj.id.to_s
+      og_obj = new_obj
     else
       logger.info "URL OBJ NOT FOUND!!!!"
       new_obj = OgObject.new
@@ -85,7 +85,7 @@ class StoryController < ApplicationController
     end
 
     if og_obj != nil
-      redirect_to "/story/ext_og_obj_id?id=" + og_obj.id.to_s
+      redirect_to "/story/ext_og_obj_id/" + og_obj.id.to_s
     else
       render :layout => nil
     end
