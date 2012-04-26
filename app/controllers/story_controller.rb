@@ -52,7 +52,7 @@ class StoryController < ApplicationController
     logger.info "\nYESYES: " + new_obj.url
     @obj = OpenGraph.fetch(new_obj.url)
     if @obj
-      @obj['url'] = "http://ogapp.herokuapp.com/story/ext_og_obj_id?id=" + new_obj.id.to_s
+      @obj['url'] = "http://ogapp.herokuapp.com/story/ext_og_obj_id/" + new_obj.id.to_s
       logger.info "og:url: " + new_obj.url.to_s
       logger.info "Obj: " + @obj.to_s
       @orig_url = new_obj.url
