@@ -2,7 +2,13 @@ class StoryController < ApplicationController
 
   def index
     logger.info request.params
-    @obj = false
+    @obj = Hash.new
+    @obj['og:type'] = ''
+    @obj['og:url'] = ''
+    @obj['og:title'] = ''
+    @obj['og:image'] = ''
+    @obj['og:description'] = ''
+
     @url_obj = nil
     if params[:do_action] == 'prefill'
       @obj = OpenGraph.fetch(params['og:url'])
