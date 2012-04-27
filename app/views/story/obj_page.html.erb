@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= @obj['type'] %>: http://ogp.me/ns/<%= @obj['type'] %>#">
+  <meta property="fb:app_id" content="<%= APP_ID %>" />
+  <% @obj.attributes.each { |k, v| %>
+      <% val = v %>
+      <% if k == 'url' %>
+          <% val = request.url %>
+      <% end %>
+      <meta property="og:<%= k %>" content="<%= val %>" />
+  <% } %>
+</head>
+
+<body style="margin: 0">
+
+<iframe src="<%= @obj.url %>" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+</body>
+</html>

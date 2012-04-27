@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
   <title>PUAP You!</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -49,13 +49,13 @@
     }(document));
 </script>
 
-<h3>PUAP THIS</h3>
+<h3>PUAP Something</h3>
 <br>
 <p></p>
 
 
 <form action="/story/index">
-  OG object url: <input type="text" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="hidden" name="do_action" value="prefill"> <input type="submit" value="Get metadata">
+  OG object url: <input type="text" name="og:url" size="30" value="<%= params['og:url'] %>"><input type="hidden" name="do_action" value="prefill"> <input type="submit" value="Get metadata">&nbsp;<a href="/story/obj_page_create">Create object page</a>
 </form>
 <% if @obj %>
 <hr/>
@@ -75,13 +75,13 @@
 <% if @stories.first != nil %>
 <hr/>
 <% i = 1 %>
-    <div style="font-size: 10px">
+    <div style="font-size: 11px"></div>
 <% @stories.each { |x| %>
-    <%= i %>) Story ID: <a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>"><%= x.story_id %></a>Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %><br>
+    <%= i %>) <a href="http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %>">http://facebook.com/<%= @vanity %>/activity/<%= x.story_id %></a>Action: <%= x.og_action %>, Obj type: <%= x.og_type %>, Obj URL: <%= x.og_url %><br>
     <% i += 1 %>
 <% } %>
 <% end %>
-</div>
+
 
 
 <hr/>

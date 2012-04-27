@@ -2,12 +2,7 @@ class StoryController < ApplicationController
 
   def index
     logger.info request.params
-    @obj = Hash.new
-    @obj['og:type'] = ''
-    @obj['og:url'] = ''
-    @obj['og:title'] = ''
-    @obj['og:image'] = ''
-    @obj['og:description'] = ''
+    @obj = false
 
     @url_obj = nil
     if params[:do_action] == 'prefill'
@@ -34,6 +29,39 @@ class StoryController < ApplicationController
 
   def test
     render :text => "Hello world!"
+  end
+
+  def obj_page_create
+
+  end
+
+  def obj_page_create_submit
+    og_obj = OgObject.new
+    og_obj.url = params[:content_url]
+    og_obj.og_type = params["og:type"]
+    og_obj.og_title = params["og:title"]
+    og_obj.og_description = params["og:description"]
+    og_obj.og_image = params["og:image"]
+    og_obj.save
+    redirect_to "/story/obj_page/" + og_obj.id.to_s
+  end
+
+  def obj_page
+    @obj = OgObject.find(params['id'])
+    render :layout => nil
+  end
+
+  def get_all_obj_pages
+    pages = OgObject.all
+    p = ""
+    pages.each { |k|
+      p += 'id: ' + k.id.to_s + ', url: '
+      if k.url != nil
+        p += k.url
+      end
+      p += '<hr>'
+    }
+    render :text => p
   end
 
   def new_article
